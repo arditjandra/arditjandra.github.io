@@ -1,14 +1,28 @@
+<!DOCTYPE html>
 <html>
-<head>
-	<title>Hello World</title>
-	<script>
-	alert("Test3");
-    //location = 'https://app.adjust.com/ksrxcs?deep_link=movmnt%3A%2F%2Fapp%2FPROFILE';
-    location = 'https://www.google.com';
-    window.open(location, '_blank', 'toolbar=0,location=0,menubar=0');
-    </script>
-</head>
-<body>
-	test3
-</body>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+    </head>
+    <body>
+        <script type="text/javascript">
+            window.onload = function() {
+                var desktopFallback = "www.google.com",
+                mobileFallback = "http://www.google.com",
+                app = "movmnt://app/PROFILE";
+                if( /Android|iPhone|iPad|iPod/i.test(navigator.userAgent) ) {
+                    window.location = app;
+                    window.setTimeout(function() {
+                        window.location = mobileFallback;
+                    }, 25);
+                } else {
+                    window.location = desktopFallback;
+                }
+                function killPopup() {
+                    window.removeEventListener('pagehide', killPopup);
+                }
+                window.addEventListener('pagehide', killPopup);
+            };
+        </script>
+    </body>
 </html>
