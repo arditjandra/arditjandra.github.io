@@ -7,7 +7,7 @@
     <body>
         <script type="text/javascript">
             window.onload = function() {
-                var desktopFallback = "http://www.google.com",
+                var desktopFallback = "https://app.adjust.com/ksrxcs?deep_link=movmnt%3A%2F%2Fapp%2FPROFILE",
                 mobileFallback = "https://app.adjust.com/ksrxcs?deep_link=movmnt%3A%2F%2Fapp%2FPROFILE",
                 app = "movmnt://app/PROFILE";
                 if( /Android|iPhone|iPad|iPod/i.test(navigator.userAgent) ) {
@@ -18,10 +18,10 @@
                 } else {
                     window.location = desktopFallback;
                 }
-                function killPopup() {
-                    window.removeEventListener('pagehide', killPopup);
-                }
-                window.addEventListener('pagehide', killPopup);
+                //function killPopup() {
+                //    window.removeEventListener('pagehide', killPopup);
+                //}
+                //window.addEventListener('pagehide', killPopup);
             };
         </script>
     </body>
