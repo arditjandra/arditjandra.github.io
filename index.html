@@ -9,7 +9,7 @@
             window.onload = function() {
                 var desktopFallback = "https://app.adjust.com/ksrxcs?deep_link=movmnt%3A%2F%2Fapp%2FPROFILE",
                 mobileFallback = "https://app.adjust.com/ksrxcs?deep_link=movmnt%3A%2F%2Fapp%2FPROFILE",
-                app = "movmnt://app/PROFILE";
+                app = "intent://?adjust_tracker=ksrxcs&adjust_reftag=vph22gbhld3x#Intent;scheme=movmnt%3A%2F%2Fapp%2FPROFILE;package=de.movmnt.android;S.browser_fallback_url=http://www.zalando.de;end";
                 if( /Android|iPhone|iPad|iPod/i.test(navigator.userAgent) ) {
                     window.location = app;
                     window.setTimeout(function() {
